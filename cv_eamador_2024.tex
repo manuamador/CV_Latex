@@ -1,0 +1,340 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[9pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+
+
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage[french]{babel}
+\usepackage{datenumber,fp}
+\usepackage{fancyhdr}
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{0E0E0E}%{2E2E2E}
+\definecolor{LightGrey}{HTML}{444444}%{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+%\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+%\addbibresource{sample.bib}
+
+
+
+\interfootnotelinepenalty=10000
+
+\begin{document}
+%\newcounter{dateone}%
+%\newcounter{datetwo}%
+
+%\setmydatenumber{dateone}{1982}{03}{20}%
+%\setmydatenumber{datetwo}{\the\year}{\the\month}{\the\day}%
+%\FPsub\result{\thedatetwo}{\thedateone}
+%\FPdiv\myage{\result}{365.2425}
+%\FPtrunc\myage{\myage}{0}\myage\ ans
+
+\name{Emmanuel Amador}
+\tagline{Chef de projet confirmé, RSI}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{moi.jpg}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\NewInfoField{age}{\faBirthdayCake}[]
+\NewInfoField{permis}{\faCar}[]
+%\newcommand{\monage}{\FPtrunc\myage{\myage}{0}}
+%\FPtrunc\myage{\myage}{0}\myage\ ans
+\personalinfo{%
+  % Not all of these are required!
+  \email{emmanuel.amador@edf.fr}
+  \phone{+33 6 95 94 45 50}
+  %\mailaddress{Åddrésş, Street, 00000 Cóuntry}
+  \location{Grenoble, FRANCE}\\[0.1cm]
+  \age{42 ans}
+   \permis{permis B}\\[0.1cm]
+  %\homepage{www.homepage.com}
+  %\twitter{@twitterhandle}
+ 
+  \LARGE{\href{https://fr.linkedin.com/in/emmanuel-amador-phd-8744704}{\textcolor{PastelRed}{\faLinkedin}}
+  \href{https://github.com/manuamador}{\textcolor{PastelRed}{\faGithub}}
+  \href{https://scholar.google.fr/citations?user=r1s5JKYAAAAJ&hl=fr}{\textcolor{PastelRed}{\faUniversity}}
+  \href{https://www.flickr.com/photos/emmanuelamador/}{\textcolor{PastelRed}{\faFlickr}}
+	}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Expérience}
+
+\cvevent{Chef de projet confirmé et animateur du pôle SIG, RSI de PFA}{EDF-DPNT-DTEAM}{depuis 2016}{Grenoble, France}
+\begin{itemize}
+\item En charge du projet \underline{\href{https://stinger.edf.fr/}{STINGER}} (SIG des producteurs et des ingénieries d'EDF). Suivi du projet, rédaction du cahier des charges, jalons PMPG. MOA de la dizaine de métiers représentés. Arbitrages, gestion du budget et réalisation d'une feuille de route court et moyen terme pour faire une transition vers une plateforme 100\% open-source. Gestion de la main d'œuvre (prestation externe) et de la relation avec l'éditeur.
+\item Chef de projet SIFON 2, outil de gestion du foncier d'EDF. Rédaction du cahier des charges, suivi PMPG, relation
+avec l'éditeur et la DSIT. Suivi du développement en mode Agile avec les utilisateurs et conduite du changement. 
+\item Animation de la cellule SIG de PFA. Encadrement de l'activité de trois collègues, de plusieurs alternants et de nombreuses missions d'intérimaires. Développement de \underline{\href{https://stinger.edf.fr/pfa/}{nombreux outils}} sur mesure, automatisation de nombreuses tâches et production de jeux de données pour faciliter le travail des agents de PFA et de ses partenaires afin de gérer au mieux le 3\up{e} parc foncier de~France.
+\item RSI de PFA, représente PFA et ses projets SI dans les instances de gouvernances de la DTEAM. Relation avec la DSIT pour faire adhérer les outils SI aux doctrines et faire évoluer les différents outils métiers selon les besoins et les contraintes existantes.
+\end{itemize}
+
+%\printinfo{\faTrophy} Récompenses:
+%\begin{itemize}
+%\item Trophées pratiques performantes DAIP 2016 pour \underline{\href{https://stinger.edf.fr/}{STINGER}}
+%\item Prix du jury Innov DTEAM 2023 pour \underline{\href{https://stinger.edf.fr/pfa/carto_flumet/Vue3D.html}{3D Project}},
+%\item Prix de l'innovation PFA 2024 pour \underline{\href{https://stinger.edf.fr/pfa/SM/}{l'outil de suivi automatique des acquisitions foncières}}
+%\end{itemize} 
+
+\divider
+
+\cvevent{Ingénieur chercheur au LME}{EDF Lab}{2012 -- 2016}{Orvanne, France}
+\begin{itemize}
+\item Responsable des études et des moyens d'essais en compatibilité électromagnétique.
+\item Référent technique pour la faisabilité des protections contre les drones en CNPE.
+\item \underline{\href{https://scholar.google.fr/citations?user=r1s5JKYAAAAJ&hl=fr}{Publications}} d'articles dans des revues scientifiques et représentation d'EDF en colloques scientifiques.
+\end{itemize}
+
+
+\divider
+
+\cvevent{Postdoctorat à la Technische Universität Dresden (TÜD)}{DGA}{2011 -- 2012}{Dresde, Allemagne}
+\begin{itemize}
+\item Étude statistique des propriétés de rayonnement des objets complexes.
+\item \underline{\href{https://scholar.google.fr/citations?user=r1s5JKYAAAAJ&hl=fr}{Publications}} d'articles dans des revues scientifiques et des colloques.
+\end{itemize}
+
+\divider
+
+\cvevent{Thèse DGA en électronique à l'IETR}{CNRS/DGA}{2008 -- 2011}{Rennes, France}
+\begin{itemize}
+\item Étude du comportement d'une chambre réverbérante dans le domaine temporel, développement d'un modèle numérique basé sur la théorie des images.
+\item \underline{\href{https://scholar.google.fr/citations?user=r1s5JKYAAAAJ&hl=fr}{Publications}} d'articles dans des revues scientifiques et des colloques.
+\item Enseignant/moniteur en premier et second cycle à l'INSA de Rennes.
+\end{itemize}
+%\cvsection{Projects}
+%
+%\cvevent{Project 1}{Funding agency/institution}{}{}
+%\begin{itemize}
+%\item Details
+%\end{itemize}
+%
+%\divider
+%
+%\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+%A short abstract would also work.
+
+\smallskip
+
+%\cvsection{A Day of My Life}
+%
+%% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+%% \wheelchart{outer radius}{inner radius}{
+%% comma-separated list of value/text width/color/detail}
+%\wheelchart{1.5cm}{0.5cm}{%
+%  6/8em/accent!30/{Sleep,\\beautiful sleep},
+%  3/8em/accent!40/Hopeful novelist by night,
+%  8/8em/accent!60/Daytime job,
+%  2/10em/accent/Sports and relaxation,
+%  5/6em/accent!20/Spending time with family
+%}
+%
+%% use ONLY \newpage if you want to force a page break for
+%% ONLY the current column
+%\newpage
+%
+%\cvsection{Publications}
+%
+%%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+%\mynames{Lim/Lian\bibnamedelima Tze,
+%  Wong/Lian\bibnamedelima Tze,
+%  Lim/Tracy,
+%  Lim/L.\bibnamedelimi T.}
+%%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+%
+%\nocite{*}
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+%
+%\divider
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+%
+%\divider
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+
+\vspace{0.9cm}    %% pour ajuster l'affcihage de al date dse mise à jour verticalement
+\footnotesize{Dernière mise à jour: \today}
+\switchcolumn
+
+
+%\cvsection{My Life Philosophy}
+%
+%\begin{quote}
+%``Fuck this shit''
+%\end{quote}
+
+\cvsection{Récompenses}
+
+\cvachievement{\faTrophy}{Trophées pratiques performantes DAIP 2016}{pour le projet \underline{\href{https://stinger.edf.fr/}{STINGER}}}
+\cvachievement{\faTrophy}{Prix du jury Innov DTEAM 2023}{pour l'outil de gestion de projet interactif \underline{\href{https://stinger.edf.fr/pfa/carto_flumet/Vue3D.html}{3D Project}}}
+\cvachievement{\faTrophy}{Prix de l'innovation PFA 2024}{pour \underline{\href{https://stinger.edf.fr/pfa/SM/}{l'outil}} de suivi des acquisitions foncières.}
+
+\cvsection{Points forts}
+
+\cvtag{travailleur}
+\cvtag{esprit d'équipe}
+\cvtag{esprit analytique et pratique}
+
+\divider\vspace{-0.1cm}
+
+\cvtag{calcul numérique}\cvtag{\faChartBar statistiques}\cvtag{\faMicrochip électronique}
+\cvtag{ondes}\cvtag{électromagnétisme}\cvtag{\faBroadcastTower antennes et propagation}\\ \cvtag{\faWifi télécommunications}\cvtag{\faRobot automatisations}\cvtag{\faRuler métrologie}\cvtag{\faMap SIG}\cvtag{\faFilter analyse de données}\cvtag{\faBrain  machine learning}
+
+\divider\vspace{-0.1cm}
+\cvtag{\faPython Python}\cvtag{C}\cvtag{\faJava Java}\cvtag{\faDatabase SQL}\cvtag{\faJs JavaScript}\cvtag{HTML\faHtml5}%\cvtag{\LaTeX}
+
+\cvsection{Langues}
+
+\cvskill{Anglais}{5}
+\divider
+
+\cvskill{Espagnol}{3}
+\divider
+
+\cvskill{Allemand}{2} %% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\smallskip
+
+\cvsection{Formation}
+
+\cvevent{Thèse en électronique}{INSA de Rennes }{2008 -- 2011}{Rennes, France}
+\textit{Modèles de compréhension par la théorie des images des phénomènes transitoires et du régime permanent en chambre réverbérante électromagnétique.}\\Mention très honorable. \href{https://hal.science/tel-00652164v1}{\textcolor{PastelRed}{\faFilePdf}}
+
+\divider
+
+\cvevent{Maîtrise (M.Sc) en génie électrique}{Université Laval}{2006 -- 2008}{Québec, Canada}
+\textit{Conception d'une petite chambre réverbérante pour l'émulation de canaux.}
+
+\divider
+
+\cvevent{Diplôme d'ingénieur en télécommunications}{Télécom SudParis}{2003 -- 2006}{Évry, France}
+Optoélectronique, systèmes microondes, analyse et traitement d'image.
+
+\smallskip
+\cvsection{Loisirs}
+Plongée, \underline{\href{https://www.flickr.com/photos/emmanuelamador/}{photographie}}, guitare électrique.
+\end{paracol}
+
+\end{document}
