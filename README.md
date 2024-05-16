@@ -1,2 +1,2 @@
 # CV_Latex
-Mon CV
+Mon CV basé sur altacv.cls.
